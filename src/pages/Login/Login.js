@@ -2,11 +2,17 @@ import { useState } from 'react';
 import Button from '../../components/Button/Button';
 import styles from './Login.module.css';
 import axios from 'axios';
+import Api from '../../helper/ApiCalls/Api';
 
 export default function Login({}) {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const [emailErr, setEmailErr] = useState("");
+    const [passwordErr, setPasswordErr] = useState("");
+
+    const [isLoading, setIsLoading] = useState(false);
 
     const onChangeEmail = (e) => {
         setEmail(e.target.value)
@@ -17,7 +23,9 @@ export default function Login({}) {
     }
 
     const onLogin = () => {
+        setIsLoading(true);
         if (!checkData()) {
+            setIsLoading(false);
             return;
         }
         let data = {
@@ -26,11 +34,34 @@ export default function Login({}) {
         }
 
         // axios
+        // Api.apiPost('/login', data, onLoginSuccess, onLoginFailed, false, 'application/json');
 
+        setTimeout(() => {
+            onLoginSuccess([]);
+        }, 2000);
+    }
+
+    const onLoginSuccess = (res) => {
+        setIsLoading(false)
         window.location.assign('/stores')
     }
 
+    const onLoginFailed = (err) => {
+        setIsLoading(false)
+    }
+
     const checkData = () => {
+        if (email) {
+
+        } else {
+            return false;
+        }
+
+        if (password) {
+            
+        } else {
+            return false;
+        }
 
         return true;
     }
@@ -60,11 +91,12 @@ export default function Login({}) {
                             type='password'
                     />
                 </div>
-                <Button text={"Login"}
+                <Button text={isLoading? <img src='/assets/loading/loading-white.png' height={24}/> : "Login"}
                         style={{
                             marginTop: '20px'
                         }}
                         onClick={onLogin}
+                        disabled={isLoading}
                 />
             </div>
         </div>

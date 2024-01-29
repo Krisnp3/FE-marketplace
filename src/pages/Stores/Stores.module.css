@@ -93,3 +93,8 @@
     margin-top: 20px;
     margin-bottom: 40px;
 }
+
+.analyticsError {
+    color: #ff0000;
+    font-size: 14px;
+}

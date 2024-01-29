@@ -43,8 +43,7 @@ function Table(props) { // props: data, customDataVisual, dataColumns, cellPaddi
                             {props.customTitleVisual && props.customTitleVisual[val]? props.customTitleVisual[val](val, colIndex) : val}
                         </div>
                         
-                        {props.data? 
-                        
+                        {props.data && !props.isLoading? 
                         props.data.map((dataVal, rowIndex) => {
                             return (
                                 <div className={`row${rowIndex} cell`} 
@@ -66,9 +65,13 @@ function Table(props) { // props: data, customDataVisual, dataColumns, cellPaddi
                             )})
                             :null
                         }
+
+                        
                     </div>
+                    
                 )
             }):null}
+            
         </div>
     );
 }

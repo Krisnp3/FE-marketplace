@@ -5,6 +5,7 @@ import styles from './Stores.module.css';
 import Table from '../../components/Table/Table';
 import Button from '../../components/Button/Button';
 import EditStore from '../../components/EditStore/EditStore';
+import Api from '../../helper/ApiCalls/Api';
 
 // const CustomTableCell = styled(theme => ({
 //     head: {
@@ -49,8 +50,11 @@ export default function Stores({isComparison, comparisonDataUpdate}) {
     const [removeOn, setRemoveOn] = useState(false);
 
     const [selectedStores, setSelectedStore] = useState([]);
+    const [selectedStoresErr, setSelectedStoreErr] = useState("");
 
     const [tableScale, setTableScale] = useState(1);
+
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         fetchStores();
@@ -71,8 +75,23 @@ export default function Stores({isComparison, comparisonDataUpdate}) {
     }, [selectedStores])
 
     const fetchStores = () => {
+        setIsLoading(true);
 
+        //axios
+        // Api.apiGet('/', onFetchStoreSuccess, onFetchStoreFailed, true)
+
+        setTimeout(() => {
+            onFetchStoreSuccess([]);
+        }, 2000);
+    }
+
+    const onFetchStoreSuccess = (res) => {
         setStoreList(dummyStores);
+        setIsLoading(false);
+    }
+
+    const onFetchStoreFailed = (err) => {
+        setIsLoading(false);
     }
 
     const onWindowResize = () => {
@@ -132,26 +151,45 @@ export default function Stores({isComparison, comparisonDataUpdate}) {
     const onPickStore = (e, dataIndex) => {
         
         let temp = storeListShown;
-        temp[dataIndex].PICK = !temp[dataIndex].PICK;
+        temp[dataIndex].PICK = e.target.checked;
         setStoreListShown([...temp]);
 
-        if (temp[dataIndex].PICK) {
-            temp = selectedStores;
-            temp.push(storeListShown[dataIndex])
-            setSelectedStore([...temp])
+        temp = selectedStores;
+        if (e.target.checked) {
+            if (!temp.includes(storeListShown[dataIndex])) {
+                temp.push(storeListShown[dataIndex])
+            }
         } else {
-            temp = selectedStores;
             // temp.remove(storeListShown[dataIndex])
             const index = temp.indexOf(storeListShown[dataIndex]);
-            if (index > -1) { // only splice array when item is found
-                temp.splice(index, 1); // 2nd parameter means remove one item only
+            if (index > -1) {           // only splice array when item is found
+                temp.splice(index, 1);  // 2nd parameter means remove one item only
             }
-            setSelectedStore([...temp])
         }
+        setSelectedStore([...temp])
+    }
+
+    const onPickAllStores = (e) => {
+        let temp = storeListShown;
+
+        for (let i = 0; i < temp.length; i++) {
+            onPickStore(e, i);
+        }
+        
 
     }
 
     const onClickShowAnalytics = () => {
+        if (selectedStores.length < 1) {
+            setSelectedStoreErr("Please choose at least 1 store");
+            return ;
+        } else if (selectedStores.length > 1) {
+            setSelectedStoreErr("More than 1 store analytics is not available yet");
+            return ;
+        } else {
+            setSelectedStoreErr("")
+        }
+
         if (isComparison && comparisonDataUpdate) {
             comparisonDataUpdate(selectedStores);
         } else {
@@ -186,11 +224,12 @@ export default function Stores({isComparison, comparisonDataUpdate}) {
                         cellJustifyText={"left"}
                         width={900}
                         // height={300}
+                        isLoading={isLoading}
                         customTitleVisual={{
                             "PICK": (val, index) => {
                                 return (
                                     <div className={styles.marketplaceCell}>
-                                        <input type='checkbox'/>
+                                        <input type='checkbox' onChange={(e) => onPickAllStores(e)}/>
                                     </div>
                                 )
                             },
@@ -271,6 +310,9 @@ export default function Stores({isComparison, comparisonDataUpdate}) {
                             }}
                             onClick={onClickShowAnalytics}
                     />
+                    <div className={styles.analyticsError}>
+                        {selectedStoresErr}
+                    </div>
                 </div>
             </div>
             {editOn?
