@@ -1,0 +1,12 @@
+@import '../../GlobalStyles.module.css';
+
+.customInput {
+    border-radius: 5px;
+    border: 1px solid var(--lightgray);
+
+    padding: 8px;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}

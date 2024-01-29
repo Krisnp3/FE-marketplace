@@ -1,0 +1,14 @@
+.table {
+    display: flex;
+    overflow-x: hidden;
+    padding: 0px !important;
+    /* border-radius: 10px 10px 0 0;  */
+}
+
+.cell {
+    border-top: 1px #ffffff69 solid;
+    border-bottom: 1px #ffffff69 solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,43 @@
+@import '../../GlobalStyles.module.css';
+
+.container {
+    width: 100%;
+    min-height: var(--pageHeight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    width: 450px;
+    height: 270px;
+    border: 1px var(--lightgray) solid;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 #00000033;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    padding: 10px 50px;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.formInput {
+    width: 100%;
+}
+
+.inputTitle {
+    text-align: left;
+}
+
+.input {
+    width: 100%;
+    border-radius: 5px;
+    border: var(--lightgray) solid 1px;
+    padding: 4px 6px;
+}

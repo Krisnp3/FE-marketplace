@@ -1,0 +1,43 @@
+@import '../../GlobalStyles.module.css';
+
+.container {
+    position: relative;
+}
+
+.customInput {
+    width: calc(100% - 18px);
+    border-radius: 5px;
+    border: 1px solid var(--lightgray);
+    cursor: pointer;
+    padding: 8px;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.dropdownIcon {
+    height: 30px;
+    position: absolute;
+    transform: rotate(270deg);
+    right: 5px;
+    top: 4px
+}
+
+.dropdownCon {
+    position: absolute;
+    background-color: var(--white);
+    width: calc(100% - 2px);
+    border: var(--lightgray) 1px solid;
+    z-index: 100;
+    overflow-y: scroll;
+}
+
+.dropdownItem {
+    cursor: pointer;
+}
+
+.dropdownItem:hover {
+    background-color: var(--lightgray);
+
+}

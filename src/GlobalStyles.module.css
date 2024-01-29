@@ -1,0 +1,10 @@
+:root {
+    --blue: #2D4059;
+    --lightgray: #D0D0D0;
+    --white: #FFFFFF;
+
+    --textColor1: #FFFFFF;
+    --textColor2: #000000;
+    --textColor3: #464F60;
+    --pageHeight: calc(100vh - 70px - 50px);
+}

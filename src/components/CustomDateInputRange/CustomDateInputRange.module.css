@@ -1,0 +1,15 @@
+@import '../../GlobalStyles.module.css';
+
+.container {
+    position: relative;
+    display: flex;
+}
+
+.customInput {
+    /* width: calc(100% - 18px); */
+    border-radius: 5px;
+    border: 1px solid var(--lightgray);
+    cursor: pointer;
+    padding: 8px;
+    height: 20px;
+}

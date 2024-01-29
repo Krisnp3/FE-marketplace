@@ -1,0 +1,7 @@
+@import '../../GlobalStyles.module.css';
+
+.container {
+    min-height: var(--pageHeight);
+    width: 100%;
+    display: flex;
+}

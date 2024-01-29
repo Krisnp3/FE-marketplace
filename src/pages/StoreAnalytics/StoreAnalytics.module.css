@@ -1,0 +1,66 @@
+@import '../../GlobalStyles.module.css';
+
+.topBar {
+    margin: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filterCon {
+    border: #00000011 1px solid;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px #00000055;
+    padding: 5px 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.comparisonRow {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.iframeCard {
+    margin: 0 10px;
+    max-width: 960px;
+    width: 100%;
+    height: calc(var(--pageHeight) - 80px);
+    /* padding: 20px; */
+    border: #00000011 1px solid;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px #00000055;
+    overflow: hidden;
+}
+
+.iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.storesPopup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #00000055;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100
+}
+
+.storesContainer {
+    background-color: #FFFFFF;
+    height: min-content;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.backgroundCancel {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}

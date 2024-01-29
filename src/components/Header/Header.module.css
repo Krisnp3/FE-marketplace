@@ -1,0 +1,45 @@
+@import '../../GlobalStyles.module.css';
+
+:root {
+    --navbar-height: 70px;
+}
+
+.container {
+    /* background-color: #2D4059; */
+    height: var(--navbar-height);
+    width: 100%;
+}
+
+.navbar {
+    height: var(--navbar-height);
+    width: 100%;
+    background-color: var(--blue);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--textColor1);
+    z-index: 100;
+
+}
+
+.leftNavbar {
+    margin-left: 20px;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.rightNavbar {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.helloUser {
+    font-size: 16px;
+}
+

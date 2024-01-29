@@ -1,0 +1,62 @@
+
+
+.container {
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    width: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.smallCardTitle {
+    text-align: left;
+    font-size: 12px;
+}
+
+.smallCardValue {
+    text-align: left;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.bigCardTitle {
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.bigCardRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.bigCardSubsectionLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.bigCardSubsectionRight {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.bigCardSubtitle {
+    font-size: 12px;
+}
+
+.bigCardSubValue {
+    font-size: 22px;
+    font-weight: 700;
+}

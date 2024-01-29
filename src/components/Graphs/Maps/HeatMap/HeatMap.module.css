@@ -1,0 +1,37 @@
+.legendContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: -10px;
+}
+
+.legendColomn {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.legendTitle {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.legendRow {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.legendMinMax {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.legendColor {
+    width: 80px;
+    height: 16px;
+    background-color:darkgray ;
+    /* border-radius: 5px; */
+    /* border: 1px solid #000000; */
+}

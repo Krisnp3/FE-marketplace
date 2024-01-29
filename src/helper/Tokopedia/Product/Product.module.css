@@ -1,0 +1,26 @@
+.container {
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    width: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.smallCardTitle {
+    text-align: left;
+    font-size: 12px;
+}
+
+.smallCardValue {
+    text-align: left;
+    font-size: 22px;
+    font-weight: 700;
+}

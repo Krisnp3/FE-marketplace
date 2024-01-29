@@ -1,0 +1,95 @@
+@import '../../GlobalStyles.module.css';
+
+.container {
+    min-height: var(--pageHeight);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.tableTopBar {
+    background-color: #F4F7FC;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.addButtonText {
+    white-space: nowrap;
+    display: flex;
+    gap: 10px;
+}
+
+.tableContainer {
+    margin-top: 20px;
+    transform-origin: 50% 0%;
+}
+
+.marketplaceCell {
+    width: 100%;
+    text-align: left;
+    background-color: #00000000 !important;
+    font-weight: 700;
+}
+
+.actionRow {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    background-color: #00000000 !important;
+    justify-content: center;
+}
+
+.paginationCon {
+    background-color: #F4F7FC;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+}
+
+.paginationRight {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pageButton {
+    width: 28px;
+    height: 20px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    border: #B3B3B3 solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageButtonDisabled {
+    background-color: #F5F5F5;
+}
+
+.pageButtonImgRight {
+    transform: rotate(180deg);
+}
+
+.pageButtonImgDisabled {
+    filter: invert(84%) sepia(0%) saturate(0%) hue-rotate(173deg) brightness(88%) contrast(91%);
+}
+
+.showAnalytics {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}

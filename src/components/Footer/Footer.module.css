@@ -1,0 +1,25 @@
+@import '../../GlobalStyles.module.css';
+
+:root {
+    --footer-height: 50px;
+}
+
+.container {
+    height: var(--footer-height);
+    width: 100%;
+}
+
+.footer {
+    height: var(--footer-height);
+    width: 100%;
+    background-color: var(--blue);
+    position: absolute;
+    /* bottom: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright {
+    color: var(--textColor1);
+}
