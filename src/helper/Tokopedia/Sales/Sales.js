@@ -16,7 +16,7 @@ export default function Sales({data, onScroll}) {
     }, [])
 
     const onScrollFunc = () => {
-        console.log("page 1 onscrollfunc")
+        // console.log("page 1 onscrollfunc")
     }
 
     return (
@@ -48,26 +48,28 @@ export default function Sales({data, onScroll}) {
 
             <div className={styles.row} style={{width: "calc(50% - 32px)"}}>
                 <Card width={"calc(50% - 27px)"} appearDelay={"1.5s"} style={{alignItems: "start"}}>
-                    <div className={styles.smallCardValue}>{Constants.formatNumber(22803, true)}</div>
-                    <div className={styles.smallCardTitle}>All Orders</div>
+                    <div className={styles.smallCardValue}>{Constants.formatNumber(data["OrderStatus"]["Completed"] + data["OrderStatus"]["In-Progress"] + data["OrderStatus"]["Cancelled"], true)}</div>
+                    <div className={styles.smallCardTitle}>All Orders</div> 
                 </Card>
                 <Card width={"calc(50% - 27px)"} appearDelay={"1.5s"}>
-                    <div className={styles.smallCardValue}>{Constants.formatNumber(11139, true)}</div>
+                    <div className={styles.smallCardValue}>{Constants.formatNumber(data["OrderStatus"]["Completed"], true)}</div>
                     <div className={styles.smallCardTitle}>Completed</div>
                 </Card>
                 <Card width={"calc(50% - 27px)"} appearDelay={"1.5s"}>
-                    <div className={styles.smallCardValue}>{Constants.formatNumber(11454, true)}</div>
+                    <div className={styles.smallCardValue}>{Constants.formatNumber(data["OrderStatus"]["In-Progress"], true)}</div>
                     <div className={styles.smallCardTitle}>In-Progress</div>
                 </Card>
                 <Card width={"calc(50% - 27px)"} appearDelay={"1.5s"}>
-                    <div className={styles.smallCardValue}>{Constants.formatNumber(210, true)}</div>
+                    <div className={styles.smallCardValue}>{Constants.formatNumber(data["OrderStatus"]["Cancelled"], true)}</div>
                     <div className={styles.smallCardTitle}>Canceled</div>
                 </Card>
                 <Card width={"100%"} appearDelay={"2s"}>
-                    <PieChart title={"Orders Status"}
+                    <PieChart title={"Order Status"}
                                 // subtitle={"Completed Transactions Only"}
                                 // totalTitle={"Completed Transactions"}
                                 // totalData={155344}
+                                data={data["OrderStatus"]}
+                                colors={Constants.colorHorBarChart}
                     />
                 </Card>
             </div>

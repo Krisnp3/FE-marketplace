@@ -18,6 +18,9 @@ import styles from './ClusterMap.module.css';
 
 const color = [50, 140, 255, 50];
 
+const sizeVariable = "Total Revenue";
+const colorVariable = "Avg. Order Value";
+
 // Source data CSV
 const DATA_URL =
   'https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/icon/meteorites.json'; // eslint-disable-line
@@ -32,21 +35,22 @@ const INITIAL_VIEW_STATE = {
   bearing: 0
 };
 
-const MAP_STYLE = 'https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json';
+const MAP_STYLE = Constants.mapStyle
 
 function renderTooltip(info) {
   const {object, x, y} = info;
+  console.log("info tooltip:", info)
 
   if (info.objects) {
+
     return (
-      <div className="tooltip interactive" style={{left: x, top: y}}>
-        {info.objects.map(({name, year, mass, class: meteorClass}) => {
+      <div className={styles.tooltipInteractive} style={{left: x, top: y}}>
+        {info.objects.map(({e}) => {
+          console.log("info object: ", e)
           return (
-            <div key={name}>
-              <h5>{name}</h5>
-              <div>Year: {year || 'unknown'}</div>
-              <div>Class: {meteorClass}</div>
-              <div>Mass: {mass}g</div>
+            <div >
+              <h5>{e}</h5>
+              <h5>{sizeVariable}: {e[sizeVariable]}</h5>
             </div>
           );
         })}
@@ -59,12 +63,16 @@ function renderTooltip(info) {
   }
 
   return object.cluster ? (
-    <div className="tooltip" style={{left: x, top: y}}>
+    <div className={styles.tooltipInteractive} style={{left: x, top: y}}>
       {object.point_count} records
     </div>
   ) : (
-    <div className="tooltip" style={{left: x, top: y}}>
-      {object.name} {object.year ? `(${object.year})` : ''}
+    <div className={styles.tooltipInteractive} style={{left: x, top: y}}>
+      {object.name} 
+      <br/>
+      {sizeVariable}: {Constants.formatNumber(object[sizeVariable], true, 'IDR')}
+      <br/>
+      {colorVariable}: {Constants.formatNumber(object[colorVariable], true, 'IDR')}
     </div>
   );
 }
@@ -87,8 +95,6 @@ export default function ClusterMap({
   const [colorMaxthreshold, setColorMaxThreshold] = useState(0);
   const [colorMinthreshold, setColorMinThreshold] = useState(Infinity);
 
-  const sizeVariable = "Total Revenue";
-  const colorVariable = "Avg. Order Value";
 
   useEffect(() => {
     let maxSize = 0;

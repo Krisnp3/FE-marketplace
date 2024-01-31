@@ -18,7 +18,7 @@ export default function Overview({data, onScroll}) {
     }, [])
 
     const onScrollFunc = () => {
-        console.log("page 0 onscrollfunc")
+        // console.log("page 0 onscrollfunc")
     }
 
 
@@ -73,18 +73,19 @@ export default function Overview({data, onScroll}) {
                                 // subtitle={"Completed Transactions Only"}
                                 // totalTitle={"Completed Transactions"}
                                 // totalData={155344}
+                              colors={Constants.colorHorBarChart}
                     />
                 </Card>
             </div>
             <Card width={"calc(30% - 37px)"} height={"100%"} appearDelay={"2.5s"}>
                 <HorizontalBarChart title={"Promo Type"}
-                                    barColor={Constants.colors}
+                                    barColor={Constants.colorHorBarChart}
                                     graphAspectRatio={0.7}
                 />
             </Card>
             <Card width={"calc(30% - 37px)"} height={"100%"} appearDelay={"3s"}>
                 <HorizontalBarChart title={"Shipping Expedition"}
-                                    barColor={Constants.colors}
+                                    barColor={Constants.colorHorBarChart}
                                     graphAspectRatio={0.7}
                                     data={data.ShippingExpedition}
                 />
@@ -184,8 +185,8 @@ export default function Overview({data, onScroll}) {
                                     "Orders Completed" : {color: Constants.colors[2], gradient: true},
                                     "Orders Cancelled" : {color: Constants.colors[3], gradient: true},
                                     "Orders Rejected" : {color: Constants.colors[4], gradient: true},
-                                    "Avg. Order Value" : {color: Constants.colors[10], gradient: true},
-                                    "Avg. Order Quantity" : {color: Constants.colors[2], gradient: true},
+                                    "Avg. Order Value" : {color: Constants.colors[5], gradient: true},
+                                    "Avg. Order Quantity" : {color: Constants.colors[6], gradient: true},
                                 }}
                               customCellVisual={{
                                     "Total Recipient": (key, value) => {return <div style={{textAlign: 'right'}}>{Constants.formatNumber(value, false)}</div>},
@@ -205,12 +206,12 @@ export default function Overview({data, onScroll}) {
                               title={"Product Performance"}
                               cellColors={{
                                 "Product Name": {color: "#FFFFFF", gradient: false},
-                                "Avg. Product Price": {color: Constants.colors[2], gradient: true},
-                                "Product Quantity": {color: Constants.colors[3], gradient: true},
-                                "Total Revenue": {color: Constants.colors[4], gradient: true},
-                                "Orders Completed": {color: Constants.colors[0], gradient: true},
-                                "Purchase Revenue": {color: Constants.colors[1], gradient: true},
-                                "Order Cancelled": {color: Constants.colors[2], gradient: true},
+                                "Avg. Product Price": {color: Constants.colors[0], gradient: true},
+                                "Product Quantity": {color: Constants.colors[1], gradient: true},
+                                "Total Revenue": {color: Constants.colors[2], gradient: true},
+                                "Orders Completed": {color: Constants.colors[3], gradient: true},
+                                "Purchase Revenue": {color: Constants.colors[4], gradient: true},
+                                "Order Cancelled": {color: Constants.colors[5], gradient: true},
                               }}
                               customCellVisual={{
                                 "Avg. Product Price": (key, value) => {return <div style={{textAlign: 'right'}}>{Constants.formatNumber(value, false)}</div>},
@@ -228,10 +229,10 @@ export default function Overview({data, onScroll}) {
                               title={"Promo Performance"}
                               cellColors={{
                                 "Promo Name": {color: "#FFFFFF", gradient: false},
-                                "Total Order": {color: Constants.colors[3], gradient: true},
-                                "Order Completed": {color: Constants.colors[4], gradient: true},
-                                "Order Cancelled": {color: Constants.colors[1], gradient: true},
-                                "Order In Progress": {color: Constants.colors[2], gradient: true},
+                                "Total Order": {color: Constants.colors[0], gradient: true},
+                                "Order Completed": {color: Constants.colors[1], gradient: true},
+                                "Order Cancelled": {color: Constants.colors[2], gradient: true},
+                                "Order In Progress": {color: Constants.colors[3], gradient: true},
                               }}
                               customCellVisual={{
                                 "Total Order": (key, value) => {return <div style={{textAlign: 'right'}}>{Constants.formatNumber(value, false)}</div>},
@@ -248,11 +249,11 @@ export default function Overview({data, onScroll}) {
                               totalData={DummyDatas.Overview.PromoTypeRegion.total}
                               cellColors={{
                                 "Recipient Region": {color: "#FFFFFF", gradient: false},
-                                "Total Discount": {color: Constants.colors[3], gradient: true},
-                                "Total Order Disount": {color: Constants.colors[4], gradient: true},
+                                "Total Discount": {color: Constants.colors[0], gradient: true},
+                                "Total Order Disount": {color: Constants.colors[1], gradient: true},
                                 // "Avg. Discount": {color: Constants.colors[1], gradient: true},
-                                "Total Cashback": {color: Constants.colors[1], gradient: true},
-                                "Total Order Cashback": {color: Constants.colors[2], gradient: true},
+                                "Total Cashback": {color: Constants.colors[2], gradient: true},
+                                "Total Order Cashback": {color: Constants.colors[3], gradient: true},
                                 // "Avg. Cashback": {color: Constants.colors[1], gradient: true},
                                 // "Total Grand total": {color: Constants.colors[3], gradient: true},
                                 // "Total Order Grand total": {color: Constants.colors[4], gradient: true},

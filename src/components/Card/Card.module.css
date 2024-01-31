@@ -2,13 +2,14 @@
 .container {
     padding: 10px;
     border-radius: 5px;
-    /* box-shadow: 1px 1px 8px #00000066; */
-    border: 1px #aaaaaa solid;
+    box-shadow: 1px 1px 8px #00000066;
+    /* border: 1px #aaaaaa solid; */
     position: relative;
     animation: appear 1s forwards;
     opacity: 0;
     height: min-content;
     overflow: hidden;
+
 }
 
 .animatedChild {

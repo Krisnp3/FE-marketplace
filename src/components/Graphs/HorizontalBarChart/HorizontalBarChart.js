@@ -45,7 +45,7 @@ export default function HorizontalBarChart({data = DummyDatas.Overview.PromoType
     }, [])
 
     useEffect(() => {
-        console.log("this, ", containerRef.current.offsetWidth)
+        
     }, [])
 
     return (

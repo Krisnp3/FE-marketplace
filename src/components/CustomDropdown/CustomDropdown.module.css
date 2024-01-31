@@ -5,7 +5,7 @@
 }
 
 .customInput {
-    width: calc(100% - 18px);
+    width: calc(100%);
     border-radius: 5px;
     border: 1px solid var(--lightgray);
     cursor: pointer;

@@ -105,6 +105,7 @@ export default function Geographic({data, onScroll, curPage}) {
                             color={Constants.colors}
                             data={data.CityRevenue}
                             graphAspectRatio={4}
+                            lineTickness={2}
                 />
             </Card>
 
@@ -118,6 +119,7 @@ export default function Geographic({data, onScroll, curPage}) {
                             color={Constants.colors}
                             data={data.CityQuantity}
                             graphAspectRatio={4}
+                            lineTickness={2}
                 />
             </Card>
 
@@ -179,6 +181,7 @@ export default function Geographic({data, onScroll, curPage}) {
                             color={Constants.colors}
                             data={data.KecamatanRevenue}
                             graphAspectRatio={4}
+                            lineTickness={1}
                 />
             </Card>
 
@@ -192,6 +195,7 @@ export default function Geographic({data, onScroll, curPage}) {
                             color={Constants.colors}
                             data={data.KecamatanQuantity}
                             graphAspectRatio={4}
+                            lineTickness={1}
                 />
             </Card>
 
@@ -253,6 +257,7 @@ export default function Geographic({data, onScroll, curPage}) {
                             color={Constants.colors}
                             data={data.KelurahanRevenue}
                             graphAspectRatio={4}
+                            lineTickness={1}
                 />
             </Card>
 
@@ -266,6 +271,7 @@ export default function Geographic({data, onScroll, curPage}) {
                             color={Constants.colors}
                             data={data.KelurahanQuantity}
                             graphAspectRatio={4}
+                            lineTickness={1}
                 />
             </Card>
 
@@ -305,6 +311,7 @@ export default function Geographic({data, onScroll, curPage}) {
                             color={Constants.colors}
                             data={data.JabodetabekRevenueComparison}
                             graphAspectRatio={2}
+                            lineTickness={1}
                 />
             </Card>
             <Card width={"calc(40% - 32px)"} minHeight={265}>

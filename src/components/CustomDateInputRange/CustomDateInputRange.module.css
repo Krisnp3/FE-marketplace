@@ -10,6 +10,10 @@
     border-radius: 5px;
     border: 1px solid var(--lightgray);
     cursor: pointer;
-    padding: 8px;
-    height: 20px;
+    padding: auto;
+    height: 30px;
+}
+
+.customInput .react-datepicker__calendar-icon  {
+    background-color: blue;
 }

@@ -19,7 +19,7 @@ export default function Product({data, onScroll}) {
     }, [])
 
     const onScrollFunc = () => {
-        console.log("page 2 onscrollfunc")
+        // console.log("page 2 onscrollfunc")
     }
 
 

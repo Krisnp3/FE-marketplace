@@ -15,19 +15,19 @@ export default function Carousel({children, titles, width, height, style, onScro
         // setCurPage(0)
         
         
-        pageContainerRef.current.addEventListener('scroll', (e) => {console.log("onScrollRef", e); scrollFunction()})
+        pageContainerRef.current.addEventListener('scroll', (e) => {scrollFunction()})
     }, [])
 
     useEffect(() => {
         setCarouselPage(curPage);
-        console.log("height change, ", pageContainerRef.current.children[0].children, curPage, pageContainerRef.current.children[0].children[curPage])
+        // console.log("height change, ", pageContainerRef.current.children[0].children, curPage, pageContainerRef.current.children[0].children[curPage])
 
         upadateHeight();
     }, [curPage])
 
     const upadateHeight = () => {
         if (pageContainerRef.current && pageContainerRef.current.children[0].children[curPage]) {
-            console.log("height change 2", pageContainerRef.current.children[0].children[curPage].offsetHeight)
+            // console.log("height change 2", pageContainerRef.current.children[0].children[curPage].offsetHeight)
             pageContainerRef.current.children[0].style.height = `${pageContainerRef.current.children[0].children[curPage].offsetHeight + 30}px`;
         } else {
             setTimeout(() => {

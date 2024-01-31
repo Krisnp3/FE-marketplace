@@ -44,7 +44,7 @@ export default function BarChart({data, title, subtitle, totalTitle, totalData, 
     }, [])
 
     useEffect(() => {
-        console.log("this, ", containerRef.current.offsetWidth)
+        // console.log("this, ", containerRef.current.offsetWidth)
     }, [])
 
     return (

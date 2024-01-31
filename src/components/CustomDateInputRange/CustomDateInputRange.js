@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './CustomDateInputRange.module.css';
+import './CustomDateInputRange.css'
 import Constants from '../../Global';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
@@ -10,11 +11,13 @@ export default function CustomDateInputRange({onChange ,style, disabled, initial
     const [optionsShown, setOptionsShown] = useState(options);
 
     useEffect(() => {
-
+        if (initialValue) {
+            setStartDate(initialValue.start);
+            setEndDate(initialValue.end);
+        }
     }, [])
     
     useEffect(() => {
-        console.log("options: ", options)
         setOptionsShown(options)
     }, [options])
 

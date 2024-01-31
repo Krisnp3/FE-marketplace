@@ -48,7 +48,7 @@ export default function BubbleChart({data, title, subtitle, totalTitle, totalDat
     }, [])
 
     useEffect(() => {
-        console.log("containerScale: ", containerScale)
+        // console.log("containerScale: ", containerScale)
     }, [containerScale])
 
     useEffect(() => {
@@ -75,7 +75,6 @@ export default function BubbleChart({data, title, subtitle, totalTitle, totalDat
                 tempDataPoints[data.data[i].label] = [point];
             }
         }
-        console.log("data points: ", tempDataPoints)
         setDataPoints({...tempDataPoints})
     }, [labels])
 
@@ -138,7 +137,7 @@ export default function BubbleChart({data, title, subtitle, totalTitle, totalDat
                                 //   }],
                             }
                         } else {
-                            console.log("hi")
+                            
                         }
                     })
                 }}

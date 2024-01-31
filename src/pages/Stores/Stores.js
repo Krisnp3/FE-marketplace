@@ -20,21 +20,21 @@ import Api from '../../helper/ApiCalls/Api';
 
 export default function Stores({isComparison, comparisonDataUpdate}) {
     const dummyStores = [
-        {"PICK": false, "MARKETPLACE": "TOKOPEDIA", "API KEY": "1234455", "STORE NAME": "Flimty Jakarta", "ACTION": 0},
-        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Flimty Jakarta", "ACTION": 1},
-        {"PICK": false, "MARKETPLACE": "BLIBLI", "API KEY": "1234455", "STORE NAME": "Flimty Bandung", "ACTION": 2},
-        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 3},
-        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 4},
-        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 5},
-        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 6},
-        {"PICK": false, "MARKETPLACE": "BLIBLI", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 7},
-        {"PICK": false, "MARKETPLACE": "TOKOPEDIA", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 8},
-        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 9},
-        {"PICK": false, "MARKETPLACE": "BLIBLI", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 10},
-        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 11},
-        {"PICK": false, "MARKETPLACE": "TOKOPEDIA", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 12},
-        {"PICK": false, "MARKETPLACE": "TOKOPEDIA", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 13},
-        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Flimty Surabaya", "ACTION": 14},
+        {"PICK": false, "MARKETPLACE": "TOKOPEDIA", "API KEY": "1234455", "STORE NAME": "Brand Jakarta", "ACTION": 0},
+        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Brand Jakarta", "ACTION": 1},
+        {"PICK": false, "MARKETPLACE": "BLIBLI", "API KEY": "1234455", "STORE NAME": "Brand Bandung", "ACTION": 2},
+        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 3},
+        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 4},
+        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 5},
+        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 6},
+        {"PICK": false, "MARKETPLACE": "BLIBLI", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 7},
+        {"PICK": false, "MARKETPLACE": "TOKOPEDIA", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 8},
+        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 9},
+        {"PICK": false, "MARKETPLACE": "BLIBLI", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 10},
+        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 11},
+        {"PICK": false, "MARKETPLACE": "TOKOPEDIA", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 12},
+        {"PICK": false, "MARKETPLACE": "TOKOPEDIA", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 13},
+        {"PICK": false, "MARKETPLACE": "SHOPEE", "API KEY": "1234455", "STORE NAME": "Brand Surabaya", "ACTION": 14},
     ];
 
     const [storeList, setStoreList] = useState([]);
@@ -71,7 +71,7 @@ export default function Stores({isComparison, comparisonDataUpdate}) {
     }, [curPage])
 
     useEffect(() => {
-        console.log(selectedStores)
+        
     }, [selectedStores])
 
     const fetchStores = () => {

@@ -1,3 +1,5 @@
+import mapStyle from "./MapStyle";
+
 const Constants = {
     token: "",
     mapInitialCoordinate: {
@@ -8,7 +10,11 @@ const Constants = {
         pitch: 0,
         bearing: 0
     },
-    colors: ["#f10096", "#ff8f00", "#ffe600", "#37ff00", "#1e88e5", "#063e99", "#610699", "#99066f", "#99066f", " #990b06", "#06993c"],
+    colors: ["#FF8080", "#a9ff96", "#B4E4FF", "#95BDFF", "#FFCF96", "#F6FDC3", "#A1EEBD", "#99066f", " #990b06", "#06993c"],
+    // colors: ["#34a853", "#fbbc05", "#ea4335","#34a853", "#fbbc05", "#ea4335","#34a853", "#fbbc05", "#ea4335","#34a853", "#fbbc05", "#ea4335", "#95BDFF", "#F7C8E0", "#FFCF96", "#F6FDC3", "#A1EEBD", "#99066f", "#06993c", "#FF8080",],
+    // colors: ["#34a853", "#fbbc05", "#ea4335","#467fe0", "#34a853", "#fbbc05", "#ea4335","#467fe0", "#34a853", "#fbbc05", "#ea4335","#467fe0", ],
+    // colors: ["#01ebff", "#049fff", "#ff8c00","#ff7701","#01ebff", "#049fff", "#ff8c00","#ff7701","#01ebff", "#049fff", "#ff8c00","#ff7701",],
+    colorHorBarChart: ["#34a853", "#fbbc05", "#ea4335","#0452d9",],
     dummyMarketplace: [
         "TOKOPEDIA",
         "SHOPEE",
@@ -33,7 +39,6 @@ const Constants = {
         let sum = 0;
         for (let i = 0; i < data.length; i++) {
             sum += data[i][dataSummed];
-            console.log("sum data: ", data[i][dataSummed])
         }
         return sum
     },
@@ -43,7 +48,6 @@ const Constants = {
             method: "GET"
         }).then(async (res) => {
             res.json().then(async (result) => {
-                console.log(result.result)
                 setProvinces(result.result)
             })
         })
@@ -53,7 +57,6 @@ const Constants = {
             method: "GET"
         }).then(async (res) => { 
             res.json().then(async (result) => {
-                console.log(result.result)
                 setCities(result.result);
             })
         })
@@ -63,7 +66,6 @@ const Constants = {
             method: "GET"
         }).then(async (res) => {
             res.json().then(async (result) => {
-                console.log(result.result)
                 return result.result;
             })
         })
@@ -73,27 +75,14 @@ const Constants = {
             method: "GET"
         }).then(async (res) => {
             res.json().then(async (result) => {
-                console.log(result.result)
                 return result.result;
             })
         })
     },
     mapToObject: (map) => Object.fromEntries(map.entries()),
-    isInViewport: (element) => {
-        const rect = element.getBoundingClientRect();
-        
-        console.log("shown: ",
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth))
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
+    
+
+    mapStyle: mapStyle,
 };
 
 export default Constants;

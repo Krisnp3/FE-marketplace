@@ -29,7 +29,6 @@ export default function AnalyticsPage({isComparing, marketplace = "tokopedia"}) 
 
     useEffect(() => {
         if (marketplaceHelper) {
-            console.log("marketplace: ", marketplaceHelper)
             setCarouselTitle(marketplaceHelper.labels);
             setCarouselChildren(marketplaceHelper.getData({}, onScrollUpdate, curPage));
         }
@@ -51,17 +50,14 @@ export default function AnalyticsPage({isComparing, marketplace = "tokopedia"}) 
             case 'shopee':
                 break;
             default:
-                console.log("marketplace not available");
                 window.alert("marketplace not available")
         }
     }
 
     const onresize = () => {
         if (containerRef.current) {
-            console.log("height: ", containerRef.current.offsetHeight-100)
             if (containerRef.current.offsetWidth < 980) {
                 setContainerScale(containerRef.current.offsetWidth/780);
-                console.log(containerRef.current.offsetWidth)
             } else {
                 setContainerScale(1);
             }

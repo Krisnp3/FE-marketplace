@@ -72,22 +72,26 @@ export default function StoreAnalytics({}) {
                                     placeholder={"Province"}
                                     dropdownHeight={300}
                                     onChange={onChooseProvince}
+                                    width={150}
                     />
                     <CustomDropdown options={cities.map((e) => {return e.text})} 
                                     placeholder={"City"}
                                     dropdownHeight={300}
+                                    width={150}
                     />
                     <CustomDropdown options={kecamatan.map((e) => {return e.text})} 
                                     placeholder={"Kecamatan"}
                                     dropdownHeight={300}
+                                    width={150}
                     />
                     <CustomDropdown options={kelurahan.map((e) => {return e.text})} 
                                     placeholder={"Kelurahan"}
                                     dropdownHeight={300}
+                                    width={150}
                     />
 
                     <CustomDateInputRange placeholder={"Date"}   
-                                     
+                                          initialValue={{start: (new Date() - 1000 * 3600 * 24 * 7), end: new Date()}}
                     />
                 </div>
                 <Button text={"Compare"}

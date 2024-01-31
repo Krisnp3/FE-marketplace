@@ -23,7 +23,8 @@ const dummyData = [
   [114.86064797420137, 0.46771882452337576,10],
 ]
 
-const MAP_STYLE = 'https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json';
+// const MAP_STYLE = 'https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json';
+const MAP_STYLE = Constants.mapStyle;
 
 export default function HeatMap({
   data = dummyData,

@@ -24,6 +24,7 @@ const Tokopedia = {
         let salesData = {
             "Transactions": DummyDatas.Sales.Transactions,
             "Revenue": DummyDatas.Sales.Revenue,
+            "OrderStatus": DummyDatas.Overview.OrderStatus,
             "OrdersByDay": DummyDatas.Sales.OrdersByDay,
             "OrdersByHour": DummyDatas.Sales.OrdersByHour,
             "OrdersByDayOfMonth": DummyDatas.Sales.OrdersByDayOfMonth

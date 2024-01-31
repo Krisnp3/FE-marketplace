@@ -44,7 +44,7 @@ export default function LineBarChart({data, title, subtitle, totalTitle, totalDa
     }, [])
 
     useEffect(() => {
-        console.log("this line ", data)
+        
     }, [])
 
     return (

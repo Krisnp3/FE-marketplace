@@ -48,7 +48,7 @@ const dummyData = {
     xAxis: "Date",
 }
 
-export default function LineChart({data = dummyData, title, subtitle, totalTitle, totalData, xTitle, yTitle, color, graphAspectRatio, showLegend}) {
+export default function LineChart({data, title, subtitle, totalTitle, totalData, xTitle, yTitle, color, graphAspectRatio, showLegend, lineTickness = 2}) {
     const refDefaultWidth = 680;
     const refDefaultHeight = 410;
     const containerRef = useRef();
@@ -166,8 +166,8 @@ export default function LineChart({data = dummyData, title, subtitle, totalTitle
                                     }
                                     return getGradient(ctx, chartArea, index);
                                     },
-                                pointRadius: 2,
-                                
+                                pointRadius: lineTickness,
+                                borderWidth: lineTickness,
                                 data: dataPoints[e],
                             }
                         } else {
