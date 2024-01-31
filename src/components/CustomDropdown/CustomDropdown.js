@@ -4,7 +4,6 @@ import Constants from '../../Global';
 
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import { makeStyles } from '@mui/styles';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -33,23 +32,10 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
     },
     },
 }));
-
-const useStyles = makeStyles((theme) => ({
-    icon:{
-        position: 'relative',
-        right:0,
-    },
-    iconOpen:{
-        transform:'none'
-    },
-    selectSelect:{
-        // paddingLeft:'24px'
-    }
-  }));
   
 
 export default function CustomDropdown({onChange ,style, disabled, initialValue, placeholder, canSearch, options, dropdownHeight, width}) {
-    const classes = useStyles();
+
     const [value, setValue] = React.useState(initialValue?? placeholder?? '');
     const handleChange = (event) => {
         setValue(event.target.value);
