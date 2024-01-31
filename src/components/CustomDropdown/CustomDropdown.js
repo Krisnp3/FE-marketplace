@@ -61,7 +61,6 @@ export default function CustomDropdown({onChange ,style, disabled, initialValue,
                 input={<BootstrapInput />}
                 placeholder={placeholder}
                 style={{textAlign: 'left'}}
-                classes={{icon:classes.icon, iconOpen:classes.iconOpen,select:classes.selectSelect}}
         
             >
                 <MenuItem value={placeholder}>
